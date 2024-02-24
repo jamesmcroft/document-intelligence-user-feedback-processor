@@ -1,2 +1,4 @@
 ipycanvas==0.13.1
 pdf2image==1.17.0
+pytesseract==0.3.10
+opencv-python==4.9.0.80
