@@ -1,4 +1,10 @@
 ipycanvas==0.13.1
+ipykernel==6.29.2
+matplotlib==3.8.3
+notebook==7.1.0
+numpy==1.26.4
+opencv-python==4.9.0.80
+pandas==2.2.1
 pdf2image==1.17.0
 pytesseract==0.3.10
-opencv-python==4.9.0.80
+seaborn==0.13.2

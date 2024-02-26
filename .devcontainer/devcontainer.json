@@ -1,0 +1,25 @@
+{
+  "name": "DocumentIntelligenceUserFeedback ",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "forwardPorts": [],
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-toolsai.jupyter",
+        "tomoki1207.pdf"
+      ]
+    }
+  },
+  "postCreateCommand": "pip3 --disable-pip-version-check install --user -r requirements.txt",
+  "remoteUser": "vscode"
+}
