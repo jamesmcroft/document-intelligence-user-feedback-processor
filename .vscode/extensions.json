@@ -3,6 +3,9 @@
         "ms-toolsai.jupyter",
         "ms-python.python",
         "tomoki1207.pdf",
-        "ms-vscode-remote.remote-containers"
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.vscode-node-azure-pack",
+        "ms-vscode.powershell"
     ]
 }
