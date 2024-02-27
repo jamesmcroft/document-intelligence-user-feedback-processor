@@ -1,3 +1,7 @@
+azure-ai-formrecognizer==3.3.2
+azure-core==1.30.0
+azure-identity==1.15.0
+azure-storage-blob==12.19.0
 ipycanvas==0.13.1
 ipykernel==6.29.2
 matplotlib==3.8.3
@@ -7,4 +11,5 @@ opencv-python==4.9.0.80
 pandas==2.2.1
 pdf2image==1.17.0
 pytesseract==0.3.10
+python-dotenv==1.0.1
 seaborn==0.13.2

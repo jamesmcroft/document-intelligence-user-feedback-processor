@@ -1,0 +1,1764 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2024-02-09T12:10:25Z",
+	"lastUpdatedDateTime": "2024-02-09T12:10:30Z",
+	"analyzeResult": {
+		"apiVersion": "2022-08-31",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "Microsoft\nAddress: 1111 8th st. Bellevue, WA 99501\nInvoice For: Southridge Video 1060 Main St. Atlanta, GA 65024\nInvoice Number\nInvoice Date\nInvoice Due Date\nCharges\nVAT ID\n454376\n1/22/2017\n4/05/2017\n$210,023.34\nBT\nPage\n1 of\n1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": 0,
+				"width": 8.5,
+				"height": 11,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "Microsoft",
+						"polygon": [
+							0.5492,
+							1.1335,
+							1.8359,
+							1.1335,
+							1.8359,
+							1.354,
+							0.5492,
+							1.354
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 0,
+							"length": 9
+						}
+					},
+					{
+						"content": "Address:",
+						"polygon": [
+							0.7994,
+							1.5143,
+							1.3836,
+							1.5143,
+							1.3836,
+							1.6154,
+							0.7994,
+							1.6154
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 10,
+							"length": 8
+						}
+					},
+					{
+						"content": "1111",
+						"polygon": [
+							0.8117,
+							1.7043,
+							1.0783,
+							1.7043,
+							1.0783,
+							1.8053,
+							0.8117,
+							1.8053
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 19,
+							"length": 4
+						}
+					},
+					{
+						"content": "8th",
+						"polygon": [
+							1.1488,
+							1.7043,
+							1.326,
+							1.7043,
+							1.326,
+							1.8068,
+							1.1488,
+							1.8068
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 24,
+							"length": 3
+						}
+					},
+					{
+						"content": "st.",
+						"polygon": [
+							1.3796,
+							1.7071,
+							1.5093,
+							1.7071,
+							1.5093,
+							1.8068,
+							1.3796,
+							1.8068
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 28,
+							"length": 3
+						}
+					},
+					{
+						"content": "Bellevue,",
+						"polygon": [
+							0.8068,
+							1.8964,
+							1.3533,
+							1.8964,
+							1.3533,
+							2.0164,
+							0.8068,
+							2.0164
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 32,
+							"length": 9
+						}
+					},
+					{
+						"content": "WA",
+						"polygon": [
+							1.4042,
+							1.8976,
+							1.623,
+							1.8976,
+							1.623,
+							1.9969,
+							1.4042,
+							1.9969
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 42,
+							"length": 2
+						}
+					},
+					{
+						"content": "99501",
+						"polygon": [
+							1.6685,
+							1.896,
+							2.02,
+							1.896,
+							2.02,
+							1.9994,
+							1.6685,
+							1.9994
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 45,
+							"length": 5
+						}
+					},
+					{
+						"content": "Invoice",
+						"polygon": [
+							4.4033,
+							1.5143,
+							4.8234,
+							1.5143,
+							4.8234,
+							1.6155,
+							4.4033,
+							1.6155
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 51,
+							"length": 7
+						}
+					},
+					{
+						"content": "For:",
+						"polygon": [
+							4.8793,
+							1.5143,
+							5.1013,
+							1.5143,
+							5.1013,
+							1.6154,
+							4.8793,
+							1.6154
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 59,
+							"length": 4
+						}
+					},
+					{
+						"content": "Southridge",
+						"polygon": [
+							5.1996,
+							1.5114,
+							5.9196,
+							1.5114,
+							5.9196,
+							1.6425,
+							5.1996,
+							1.6425
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 64,
+							"length": 10
+						}
+					},
+					{
+						"content": "Video",
+						"polygon": [
+							5.9632,
+							1.513,
+							6.3349,
+							1.513,
+							6.3349,
+							1.6151,
+							5.9632,
+							1.6151
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 75,
+							"length": 5
+						}
+					},
+					{
+						"content": "1060",
+						"polygon": [
+							5.2036,
+							1.716,
+							5.4935,
+							1.716,
+							5.4935,
+							1.8185,
+							5.2036,
+							1.8185
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 81,
+							"length": 4
+						}
+					},
+					{
+						"content": "Main",
+						"polygon": [
+							5.5486,
+							1.7164,
+							5.8445,
+							1.7164,
+							5.8445,
+							1.8185,
+							5.5486,
+							1.8185
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 86,
+							"length": 4
+						}
+					},
+					{
+						"content": "St.",
+						"polygon": [
+							5.8973,
+							1.7147,
+							6.0596,
+							1.7147,
+							6.0596,
+							1.8186,
+							5.8973,
+							1.8186
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 91,
+							"length": 3
+						}
+					},
+					{
+						"content": "Atlanta,",
+						"polygon": [
+							5.191,
+							1.9064,
+							5.6883,
+							1.9064,
+							5.6883,
+							2.0289,
+							5.191,
+							2.0289
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 95,
+							"length": 8
+						}
+					},
+					{
+						"content": "GA",
+						"polygon": [
+							5.7433,
+							1.9047,
+							5.9436,
+							1.9047,
+							5.9436,
+							2.0085,
+							5.7433,
+							2.0085
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 104,
+							"length": 2
+						}
+					},
+					{
+						"content": "65024",
+						"polygon": [
+							5.9885,
+							1.906,
+							6.364,
+							1.906,
+							6.364,
+							2.0085,
+							5.9885,
+							2.0085
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 107,
+							"length": 5
+						}
+					},
+					{
+						"content": "Invoice",
+						"polygon": [
+							0.5439,
+							2.8733,
+							1.0098,
+							2.8733,
+							1.0098,
+							2.9754,
+							0.5439,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 113,
+							"length": 7
+						}
+					},
+					{
+						"content": "Number",
+						"polygon": [
+							1.0611,
+							2.8743,
+							1.5729,
+							2.8743,
+							1.5729,
+							2.9754,
+							1.0611,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 121,
+							"length": 6
+						}
+					},
+					{
+						"content": "Invoice",
+						"polygon": [
+							1.9491,
+							2.8733,
+							2.415,
+							2.8733,
+							2.415,
+							2.9754,
+							1.9491,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 128,
+							"length": 7
+						}
+					},
+					{
+						"content": "Date",
+						"polygon": [
+							2.4673,
+							2.8743,
+							2.7527,
+							2.8743,
+							2.7527,
+							2.9754,
+							2.4673,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 136,
+							"length": 4
+						}
+					},
+					{
+						"content": "Invoice",
+						"polygon": [
+							3.3495,
+							2.8733,
+							3.8155,
+							2.8733,
+							3.8155,
+							2.9754,
+							3.3495,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 141,
+							"length": 7
+						}
+					},
+					{
+						"content": "Due",
+						"polygon": [
+							3.8677,
+							2.8743,
+							4.1149,
+							2.8743,
+							4.1149,
+							2.9754,
+							3.8677,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 149,
+							"length": 3
+						}
+					},
+					{
+						"content": "Date",
+						"polygon": [
+							4.1678,
+							2.8743,
+							4.4547,
+							2.8743,
+							4.4547,
+							2.9754,
+							4.1678,
+							2.9754
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 153,
+							"length": 4
+						}
+					},
+					{
+						"content": "Charges",
+						"polygon": [
+							4.7468,
+							2.8717,
+							5.289,
+							2.8717,
+							5.289,
+							3.0035,
+							4.7468,
+							3.0035
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 158,
+							"length": 7
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							6.141,
+							2.873,
+							6.4147,
+							2.873,
+							6.4147,
+							2.9736,
+							6.141,
+							2.9736
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 166,
+							"length": 3
+						}
+					},
+					{
+						"content": "ID",
+						"polygon": [
+							6.4655,
+							2.873,
+							6.5875,
+							2.873,
+							6.5875,
+							2.9736,
+							6.4655,
+							2.9736
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 170,
+							"length": 2
+						}
+					},
+					{
+						"content": "454376",
+						"polygon": [
+							0.5368,
+							3.411,
+							0.9901,
+							3.411,
+							0.9901,
+							3.5136,
+							0.5368,
+							3.5136
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 173,
+							"length": 6
+						}
+					},
+					{
+						"content": "1/22/2017",
+						"polygon": [
+							1.9554,
+							3.41,
+							2.5494,
+							3.41,
+							2.5494,
+							3.5144,
+							1.9554,
+							3.5144
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 180,
+							"length": 9
+						}
+					},
+					{
+						"content": "4/05/2017",
+						"polygon": [
+							3.3425,
+							3.4097,
+							3.9498,
+							3.4097,
+							3.9498,
+							3.5144,
+							3.3425,
+							3.5144
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 190,
+							"length": 9
+						}
+					},
+					{
+						"content": "$210,023.34",
+						"polygon": [
+							5.2909,
+							3.4114,
+							6.0511,
+							3.4114,
+							6.0511,
+							3.5388,
+							5.2909,
+							3.5388
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 200,
+							"length": 11
+						}
+					},
+					{
+						"content": "BT",
+						"polygon": [
+							6.228,
+							3.4114,
+							6.3919,
+							3.4114,
+							6.3919,
+							3.5119,
+							6.228,
+							3.5119
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 212,
+							"length": 2
+						}
+					},
+					{
+						"content": "Page",
+						"polygon": [
+							6.2429,
+							9.667,
+							6.5489,
+							9.667,
+							6.5489,
+							9.7966,
+							6.2429,
+							9.7966
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 215,
+							"length": 4
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							6.8409,
+							9.6681,
+							6.8837,
+							9.6681,
+							6.8837,
+							9.7663,
+							6.8409,
+							9.7663
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 220,
+							"length": 1
+						}
+					},
+					{
+						"content": "of",
+						"polygon": [
+							6.9512,
+							9.6656,
+							7.0593,
+							9.6656,
+							7.0593,
+							9.7681,
+							6.9512,
+							9.7681
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 222,
+							"length": 2
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							7.4076,
+							9.6681,
+							7.4503,
+							9.6681,
+							7.4503,
+							9.7663,
+							7.4076,
+							9.7663
+						],
+						"confidence": 1,
+						"span": {
+							"offset": 225,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "Microsoft",
+						"polygon": [
+							0.5492,
+							1.1335,
+							1.8359,
+							1.1335,
+							1.8359,
+							1.354,
+							0.5492,
+							1.354
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "Address:",
+						"polygon": [
+							0.7994,
+							1.5143,
+							1.3836,
+							1.5143,
+							1.3836,
+							1.6154,
+							0.7994,
+							1.6154
+						],
+						"spans": [
+							{
+								"offset": 10,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "1111 8th st.",
+						"polygon": [
+							0.8117,
+							1.7043,
+							1.5093,
+							1.7043,
+							1.5093,
+							1.8068,
+							0.8117,
+							1.8068
+						],
+						"spans": [
+							{
+								"offset": 19,
+								"length": 12
+							}
+						]
+					},
+					{
+						"content": "Bellevue, WA 99501",
+						"polygon": [
+							0.8068,
+							1.896,
+							2.02,
+							1.896,
+							2.02,
+							2.0164,
+							0.8068,
+							2.0164
+						],
+						"spans": [
+							{
+								"offset": 32,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Invoice For: Southridge Video",
+						"polygon": [
+							4.4033,
+							1.5114,
+							6.3349,
+							1.5114,
+							6.3349,
+							1.6425,
+							4.4033,
+							1.6425
+						],
+						"spans": [
+							{
+								"offset": 51,
+								"length": 29
+							}
+						]
+					},
+					{
+						"content": "1060 Main St.",
+						"polygon": [
+							5.2036,
+							1.7147,
+							6.0596,
+							1.7147,
+							6.0596,
+							1.8186,
+							5.2036,
+							1.8186
+						],
+						"spans": [
+							{
+								"offset": 81,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Atlanta, GA 65024",
+						"polygon": [
+							5.191,
+							1.9047,
+							6.364,
+							1.9047,
+							6.364,
+							2.0289,
+							5.191,
+							2.0289
+						],
+						"spans": [
+							{
+								"offset": 95,
+								"length": 17
+							}
+						]
+					},
+					{
+						"content": "Invoice Number",
+						"polygon": [
+							0.5439,
+							2.8733,
+							1.5729,
+							2.8733,
+							1.5729,
+							2.9754,
+							0.5439,
+							2.9754
+						],
+						"spans": [
+							{
+								"offset": 113,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Invoice Date",
+						"polygon": [
+							1.9491,
+							2.8733,
+							2.7527,
+							2.8733,
+							2.7527,
+							2.9754,
+							1.9491,
+							2.9754
+						],
+						"spans": [
+							{
+								"offset": 128,
+								"length": 12
+							}
+						]
+					},
+					{
+						"content": "Invoice Due Date",
+						"polygon": [
+							3.3495,
+							2.8733,
+							4.4547,
+							2.8733,
+							4.4547,
+							2.9754,
+							3.3495,
+							2.9754
+						],
+						"spans": [
+							{
+								"offset": 141,
+								"length": 16
+							}
+						]
+					},
+					{
+						"content": "Charges",
+						"polygon": [
+							4.7468,
+							2.8717,
+							5.289,
+							2.8717,
+							5.289,
+							3.0035,
+							4.7468,
+							3.0035
+						],
+						"spans": [
+							{
+								"offset": 158,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "VAT ID",
+						"polygon": [
+							6.141,
+							2.873,
+							6.5875,
+							2.873,
+							6.5875,
+							2.9736,
+							6.141,
+							2.9736
+						],
+						"spans": [
+							{
+								"offset": 166,
+								"length": 6
+							}
+						]
+					},
+					{
+						"content": "454376",
+						"polygon": [
+							0.5368,
+							3.411,
+							0.9901,
+							3.411,
+							0.9901,
+							3.5136,
+							0.5368,
+							3.5136
+						],
+						"spans": [
+							{
+								"offset": 173,
+								"length": 6
+							}
+						]
+					},
+					{
+						"content": "1/22/2017",
+						"polygon": [
+							1.9554,
+							3.41,
+							2.5494,
+							3.41,
+							2.5494,
+							3.5144,
+							1.9554,
+							3.5144
+						],
+						"spans": [
+							{
+								"offset": 180,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "4/05/2017",
+						"polygon": [
+							3.3425,
+							3.4097,
+							3.9498,
+							3.4097,
+							3.9498,
+							3.5144,
+							3.3425,
+							3.5144
+						],
+						"spans": [
+							{
+								"offset": 190,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "$210,023.34",
+						"polygon": [
+							5.2909,
+							3.4114,
+							6.0511,
+							3.4114,
+							6.0511,
+							3.5388,
+							5.2909,
+							3.5388
+						],
+						"spans": [
+							{
+								"offset": 200,
+								"length": 11
+							}
+						]
+					},
+					{
+						"content": "BT",
+						"polygon": [
+							6.228,
+							3.4114,
+							6.3919,
+							3.4114,
+							6.3919,
+							3.5119,
+							6.228,
+							3.5119
+						],
+						"spans": [
+							{
+								"offset": 212,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "Page",
+						"polygon": [
+							6.2429,
+							9.667,
+							6.5489,
+							9.667,
+							6.5489,
+							9.7966,
+							6.2429,
+							9.7966
+						],
+						"spans": [
+							{
+								"offset": 215,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "1 of",
+						"polygon": [
+							6.8409,
+							9.6656,
+							7.0593,
+							9.6656,
+							7.0593,
+							9.7681,
+							6.8409,
+							9.7681
+						],
+						"spans": [
+							{
+								"offset": 220,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "1",
+						"polygon": [
+							7.4076,
+							9.6681,
+							7.4503,
+							9.6681,
+							7.4503,
+							9.7663,
+							7.4076,
+							9.7663
+						],
+						"spans": [
+							{
+								"offset": 225,
+								"length": 1
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 226
+					}
+				],
+				"kind": "document"
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 3,
+				"columnCount": 5,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Invoice Number",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.5028,
+									2.7855,
+									1.9013,
+									2.7855,
+									1.8941,
+									3.3158,
+									0.5028,
+									3.3158
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 113,
+								"length": 14
+							}
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Invoice Date",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.9013,
+									2.7855,
+									3.2999,
+									2.7855,
+									3.2999,
+									3.3158,
+									1.8941,
+									3.3158
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 128,
+								"length": 12
+							}
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Invoice Due Date",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									3.2999,
+									2.7855,
+									4.6985,
+									2.7855,
+									4.6985,
+									3.3158,
+									3.2999,
+									3.3158
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 141,
+								"length": 16
+							}
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Charges",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									4.6985,
+									2.7855,
+									6.097,
+									2.7855,
+									6.097,
+									3.3158,
+									4.6985,
+									3.3158
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 158,
+								"length": 7
+							}
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 4,
+						"content": "VAT ID",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									6.097,
+									2.7855,
+									7.481,
+									2.7855,
+									7.4883,
+									3.3158,
+									6.097,
+									3.3158
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 166,
+								"length": 6
+							}
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"rowSpan": 2,
+						"content": "454376",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.5028,
+									3.3158,
+									1.8941,
+									3.3158,
+									1.8941,
+									3.8527,
+									0.5028,
+									3.8527
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 173,
+								"length": 6
+							}
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"rowSpan": 2,
+						"content": "1/22/2017",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.8941,
+									3.3158,
+									3.2999,
+									3.3158,
+									3.2999,
+									3.8527,
+									1.8941,
+									3.8527
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 180,
+								"length": 9
+							}
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"rowSpan": 2,
+						"content": "4/05/2017",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									3.2999,
+									3.3158,
+									4.6985,
+									3.3158,
+									4.6985,
+									3.8527,
+									3.2999,
+									3.8527
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 190,
+								"length": 9
+							}
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"rowSpan": 2,
+						"content": "$210,023.34",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									4.6985,
+									3.3158,
+									6.097,
+									3.3158,
+									6.097,
+									3.8527,
+									4.6985,
+									3.8527
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 200,
+								"length": 11
+							}
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 4,
+						"rowSpan": 2,
+						"content": "BT",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									6.097,
+									3.3158,
+									7.4883,
+									3.3158,
+									7.4956,
+									3.8527,
+									6.097,
+									3.8527
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 212,
+								"length": 2
+							}
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4935,
+							2.7686,
+							7.5256,
+							2.7707,
+							7.5255,
+							3.8684,
+							0.4927,
+							3.8671
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 113,
+						"length": 101
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.5492,
+							1.1335,
+							1.8359,
+							1.1335,
+							1.8359,
+							1.354,
+							0.5492,
+							1.354
+						]
+					}
+				],
+				"role": "title",
+				"content": "Microsoft"
+			},
+			{
+				"spans": [
+					{
+						"offset": 10,
+						"length": 40
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7994,
+							1.5143,
+							2.02,
+							1.5143,
+							2.02,
+							2.0164,
+							0.7994,
+							2.0164
+						]
+					}
+				],
+				"content": "Address: 1111 8th st. Bellevue, WA 99501"
+			},
+			{
+				"spans": [
+					{
+						"offset": 51,
+						"length": 61
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.4033,
+							1.5114,
+							6.364,
+							1.5114,
+							6.364,
+							2.0289,
+							4.4033,
+							2.0289
+						]
+					}
+				],
+				"content": "Invoice For: Southridge Video 1060 Main St. Atlanta, GA 65024"
+			},
+			{
+				"spans": [
+					{
+						"offset": 113,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.5028,
+							2.7855,
+							1.9013,
+							2.7855,
+							1.8941,
+							3.3158,
+							0.5028,
+							3.3158
+						]
+					}
+				],
+				"content": "Invoice Number"
+			},
+			{
+				"spans": [
+					{
+						"offset": 128,
+						"length": 12
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.9013,
+							2.7855,
+							3.2999,
+							2.7855,
+							3.2999,
+							3.3158,
+							1.8941,
+							3.3158
+						]
+					}
+				],
+				"content": "Invoice Date"
+			},
+			{
+				"spans": [
+					{
+						"offset": 141,
+						"length": 16
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							3.2999,
+							2.7855,
+							4.6985,
+							2.7855,
+							4.6985,
+							3.3158,
+							3.2999,
+							3.3158
+						]
+					}
+				],
+				"content": "Invoice Due Date"
+			},
+			{
+				"spans": [
+					{
+						"offset": 158,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.6985,
+							2.7855,
+							6.097,
+							2.7855,
+							6.097,
+							3.3158,
+							4.6985,
+							3.3158
+						]
+					}
+				],
+				"content": "Charges"
+			},
+			{
+				"spans": [
+					{
+						"offset": 166,
+						"length": 6
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.097,
+							2.7855,
+							7.481,
+							2.7855,
+							7.4883,
+							3.3158,
+							6.097,
+							3.3158
+						]
+					}
+				],
+				"content": "VAT ID"
+			},
+			{
+				"spans": [
+					{
+						"offset": 173,
+						"length": 6
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.5028,
+							3.3158,
+							1.8941,
+							3.3158,
+							1.8941,
+							3.8527,
+							0.5028,
+							3.8527
+						]
+					}
+				],
+				"content": "454376"
+			},
+			{
+				"spans": [
+					{
+						"offset": 180,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.8941,
+							3.3158,
+							3.2999,
+							3.3158,
+							3.2999,
+							3.8527,
+							1.8941,
+							3.8527
+						]
+					}
+				],
+				"content": "1/22/2017"
+			},
+			{
+				"spans": [
+					{
+						"offset": 190,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							3.2999,
+							3.3158,
+							4.6985,
+							3.3158,
+							4.6985,
+							3.8527,
+							3.2999,
+							3.8527
+						]
+					}
+				],
+				"content": "4/05/2017"
+			},
+			{
+				"spans": [
+					{
+						"offset": 200,
+						"length": 11
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.6985,
+							3.3158,
+							6.097,
+							3.3158,
+							6.097,
+							3.8527,
+							4.6985,
+							3.8527
+						]
+					}
+				],
+				"content": "$210,023.34"
+			},
+			{
+				"spans": [
+					{
+						"offset": 212,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.097,
+							3.3158,
+							7.4883,
+							3.3158,
+							7.4956,
+							3.8527,
+							6.097,
+							3.8527
+						]
+					}
+				],
+				"content": "BT"
+			},
+			{
+				"spans": [
+					{
+						"offset": 215,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.2429,
+							9.667,
+							6.5489,
+							9.667,
+							6.5489,
+							9.7966,
+							6.2429,
+							9.7966
+						]
+					}
+				],
+				"content": "Page"
+			},
+			{
+				"spans": [
+					{
+						"offset": 220,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.8409,
+							9.6656,
+							7.0593,
+							9.6656,
+							7.0593,
+							9.7681,
+							6.8409,
+							9.7681
+						]
+					}
+				],
+				"content": "1 of"
+			},
+			{
+				"spans": [
+					{
+						"offset": 225,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.4076,
+							9.6681,
+							7.4503,
+							9.6681,
+							7.4503,
+							9.7663,
+							7.4076,
+							9.7663
+						]
+					}
+				],
+				"content": "1"
+			}
+		],
+		"styles": []
+	}
+}
