@@ -20,6 +20,28 @@ The goal is to showcase how a feedback mechanism can be implemented to allow the
 - Install [**Docker Desktop**](https://www.docker.com/products/docker-desktop)
 - Install [**Remote - Containers**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code
 
+> [!NOTE]
+> If you are not planning on using the Dev Container, you must also install [**PowerShell Core**](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) and [**Azure CLI**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) on your local machine, as well as the necessary Python packages.
+
+### Setup the Azure infrastructure
+
+The Dev Container comes pre-configured with the necessary tools to deploy the Azure infrastructure using the [**main.bicep**](./infra/main.bicep) file. The infrastructure includes the following resources:
+
+- Azure Storage Account
+- Azure AI Document Intelligence
+
+> [!IMPORTANT]
+> You must run this step to deploy the infrastructure before running the sample notebook. The notebook will not work without the necessary Azure resources deployed.
+
+To deploy the infrastructure, run the [`Deploy-Infrastucture.ps1`](./Deploy-Infrastructure.ps1) script from the terminal in Visual Studio Code when the Dev Container is running.
+
+```powershell
+./Deploy-Infrastructure.ps1
+```
+
+> [!NOTE]
+> If you have not logged into the Azure CLI, you will need to run `az login --use-device-code` to authenticate from within the Dev Container. Running `az account set --subscription <subscription-id>` will also set the default subscription to the one you want to use if you have multiple subscriptions.
+
 ### Run the sample notebook
 
 Before running the notebook, open the project in Visual Studio Code and start the development container. This will ensure that all the necessary dependencies are installed and the environment is ready to run the notebook.
