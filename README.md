@@ -12,7 +12,7 @@ The goal is to showcase how a feedback mechanism can be implemented to allow the
 ## Getting Started
 
 > [!NOTE]
-> This sample comes prepared with a [Invoice_1.pdf](./pdfs/Invoice_1.pdf) file that is used to test the user feedback scenario. You can also use your own PDF files.
+> This sample comes prepared with a [Invoice_6.pdf](./pdfs/Invoice_6.pdf) file that is used to test the user feedback scenario. You can also use your own PDF files.
 
 ### Prerequisites
 
