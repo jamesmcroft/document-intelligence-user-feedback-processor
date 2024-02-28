@@ -6,9 +6,6 @@ The provided Sample notebook demonstrates how to implement a simple way to enabl
 
 The goal is to showcase how a feedback mechanism can be implemented to allow the developers of custom models in Azure AI Document Intelligence to collect feedback from users to improve the model with the ability to retrain.
 
-> [!NOTE]
-> The notebook only showcases the potential user interaction. The outputs are created as the labels JSON schema used by the Azure AI Document Intelligence service. The actual feedback processing and retraining of the model is not implemented in this sample (yet!).
-
 ## Getting Started
 
 > [!NOTE]
