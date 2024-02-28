@@ -2,55 +2,85 @@
 	"$schema": "https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/fields.json",
 	"fields": [
 		{
-			"fieldKey": "Company Name",
+			"fieldKey": "Customer Name",
 			"fieldType": "string",
 			"fieldFormat": "not-specified"
 		},
 		{
-			"fieldKey": "Company Address",
+			"fieldKey": "Customer Address",
 			"fieldType": "string",
 			"fieldFormat": "not-specified"
 		},
 		{
-			"fieldKey": "Invoice For",
+			"fieldKey": "Issued Date",
 			"fieldType": "string",
 			"fieldFormat": "not-specified"
 		},
 		{
-			"fieldKey": "Invoices",
+			"fieldKey": "Items",
 			"fieldFormat": "not-specified",
 			"fieldType": "array",
-			"itemType": "Invoices_object"
+			"itemType": "Items_object"
+		},
+		{
+			"fieldKey": "Total Quantity",
+			"fieldType": "string",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Total Price",
+			"fieldType": "string",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Distributor Signature",
+			"fieldType": "signature",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Customer Signature",
+			"fieldType": "signature",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Distributor Signature Date",
+			"fieldType": "string",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Customer Signature Date",
+			"fieldType": "string",
+			"fieldFormat": "not-specified"
+		},
+		{
+			"fieldKey": "Paid Stamp",
+			"fieldType": "signature",
+			"fieldFormat": "not-specified"
 		}
 	],
 	"definitions": {
-		"Invoices_object": {
-			"fieldKey": "Invoices_object",
+		"Items_object": {
+			"fieldKey": "Items_object",
 			"fieldType": "object",
 			"fieldFormat": "not-specified",
 			"fields": [
 				{
-					"fieldKey": "Invoice Number",
+					"fieldKey": "PRODUCT ID",
 					"fieldType": "string",
 					"fieldFormat": "not-specified"
 				},
 				{
-					"fieldKey": "Invoice Date",
+					"fieldKey": "UNIT PRICE",
 					"fieldType": "string",
 					"fieldFormat": "not-specified"
 				},
 				{
-					"fieldKey": "Invoice Due Date",
+					"fieldKey": "QUANTITY",
 					"fieldType": "string",
 					"fieldFormat": "not-specified"
 				},
 				{
-					"fieldKey": "Charges",
-					"fieldType": "string",
-					"fieldFormat": "not-specified"
-				},
-				{
-					"fieldKey": "VAT ID",
+					"fieldKey": "TOTAL PRICE",
 					"fieldType": "string",
 					"fieldFormat": "not-specified"
 				}
