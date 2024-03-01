@@ -85,3 +85,15 @@ To deploy the infrastructure, run the [`Deploy-Infrastucture.ps1`](./Deploy-Infr
 Before running the notebook, open the project in Visual Studio Code and start the development container. This will ensure that all the necessary dependencies are installed and the environment is ready to run the notebook.
 
 Once the development container is running, open the [**Sample.ipynb**](./Sample.ipynb) notebook and follow the instructions in the notebook to run the experiment.
+
+### Clean up resources
+
+After you have finished running the experiment, you can clean up the resources using the following steps:
+
+1. Run the `az group delete` command to delete the resource group and all the resources within it.
+
+```bash
+az group delete --name <resource-group-name> --yes --no-wait
+```
+
+The `<resource-group-name>` is the name of the resource group that can be found as the **AZURE_RESOURCE_GROUP_NAME** environment variable in the [**config.env**](./config.env) file.
