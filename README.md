@@ -37,7 +37,11 @@ With the model registered, we continue to the **Feedback** stage and the purpose
 - Once the user has marked the document, they can correct the field location and text content. This information is stored in a [feedback file](./pdfs/Invoice_6.pdf.labels.json) for later submission.
   - This feedback file uses the [labels schema](https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/labels.json) defined by Azure AI Document Intelligence.
 
-In a real-world scenario, the PDF, feedback file, and analysis results would be packaged and submitted for human review. You could then determine when to trigger the process for retraining. This step is not represented in the experiment.
+Below is an example of the user interaction experience demonstrated in the notebook.
+
+![Demonstration of canvas selection](./media/canvas-selection.gif)
+
+At this point, in a real-world scenario, the PDF, feedback file, and analysis results would be packaged and submitted for human review. You could then determine when to trigger the process for retraining. This step is not represented in the experiment.
 
 - The feedback package is then submitted to the existing Azure Storage Blob container for the model. This represents looping back to the **Collect** and **Process** stage of the MLOps process.
 - Again, the model training data, including the new feeedback, is processed using the Azure SDK for Python to incorporate the feedback to the model in Azure AI Document Intelligence. This represents the **Train** stage of the MLOps process.
@@ -55,7 +59,7 @@ The experiment is complete, and the model is ready for use with the new feedback
 - Install [**Remote - Containers**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code
 
 > [!NOTE]
-> If you are not planning on using the Dev Container, you must also install [**PowerShell Core**](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell), [**Azure CLI**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), and [**Python**](https://www.python.org/) on your local machine, as well as the necessary Python packages from the [**requirements.txt**](./requirements.txt) file.
+> If you are not planning on using the Dev Container, you must also install [**PowerShell Core**](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell), [**Azure CLI**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), and [**Python**](https://www.python.org/) on your local machine, as well as the necessary Python packages from the [**requirements.txt**](./requirements.txt) file. This also includes the required tools, [Poppler](https://github.com/oschwartz10612/poppler-windows), [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html), and [OpenCV](https://opencv.org/releases/).
 
 ### Setup the Azure infrastructure
 
