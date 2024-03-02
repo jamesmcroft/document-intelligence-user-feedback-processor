@@ -5,7 +5,7 @@
     This script initiates the deployment of the main.bicep template to the current default Azure subscription,
     determined by the Azure CLI. The deployment name and location are required parameters.
 
-	Follow the instructions in the DeploymentGuide.md file at the root of this project to understand what this
+    Follow the instructions in the README.md file at the root of this project to understand what this
     script will deploy to your Azure subscription, and the step-by-step on how to run it.
 .PARAMETER DeploymentName
     The name of the deployment to create in an Azure subscription.
