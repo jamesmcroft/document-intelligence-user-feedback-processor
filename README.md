@@ -1,4 +1,4 @@
-# Azure Document Intelligence Custom Template User Feedback Loop Experiment
+# Azure AI Document Intelligence Custom Template User Feedback Loop Experiment
 
 This experiment demonstrates how to replicate the functionality of the [Azure AI Document Intelligence](https://learn.microsoft.com/en-GB/azure/ai-services/document-intelligence/overview) Studio custom model training process to showcase how to create a user feedback loop for improving the quality of document processing results.
 
