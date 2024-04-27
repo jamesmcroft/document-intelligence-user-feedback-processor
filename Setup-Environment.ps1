@@ -64,17 +64,17 @@ $DocumentIntelligencePrimaryKey = (az cognitiveservices account keys list --name
 
 Write-Host "Updating local settings..."
 
-$ConfigurationFile = './.env'
+$ConfigurationFile = './config.env'
 
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'RESOURCE_GROUP_NAME' -variableValue $ResourceGroupName
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'MANAGED_IDENTITY_CLIENT_ID' -variableValue $ManagedIdentityClientId
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'STORAGE_ACCOUNT_NAME' -variableValue $StorageAccountName
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'STORAGE_ACCOUNT_CONNECTION_STRING' -variableValue $StorageAccountConnectionString
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'STORAGE_ACCOUNT_KEY' -variableValue $StorageAccountKey
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'DOCUMENT_INTELLIGENCE_TRAINING_DATA_CONTAINER_NAME' -variableValue $TrainingDataContainerName
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'DOCUMENT_INTELLIGENCE_NAME' -variableValue $DocumentIntelligenceName
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'DOCUMENT_INTELLIGENCE_ENDPOINT' -variableValue $DocumentIntelligenceEndpoint
-Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'DOCUMENT_INTELLIGENCE_KEY' -variableValue $DocumentIntelligencePrimaryKey
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_RESOURCE_GROUP_NAME' -variableValue $ResourceGroupName
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_MANAGED_IDENTITY_CLIENT_ID' -variableValue $ManagedIdentityClientId
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_STORAGE_ACCOUNT_NAME' -variableValue $StorageAccountName
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_STORAGE_ACCOUNT_CONNECTION_STRING' -variableValue $StorageAccountConnectionString
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_STORAGE_ACCOUNT_KEY' -variableValue $StorageAccountKey
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_DOCUMENT_INTELLIGENCE_TRAINING_DATA_CONTAINER_NAME' -variableValue $TrainingDataContainerName
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_DOCUMENT_INTELLIGENCE_NAME' -variableValue $DocumentIntelligenceName
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT' -variableValue $DocumentIntelligenceEndpoint
+Set-ConfigurationFileVariable -configurationFile $ConfigurationFile -variableName 'AZURE_DOCUMENT_INTELLIGENCE_KEY' -variableValue $DocumentIntelligencePrimaryKey
 
 Pop-Location
 

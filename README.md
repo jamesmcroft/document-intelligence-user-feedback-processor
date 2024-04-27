@@ -37,14 +37,10 @@ With the model registered, we continue to the **Feedback** stage and the purpose
 - Once the user has marked the document, they can correct the field location and text content. This information is stored in a [feedback file](./pdfs/Invoice_6.pdf.labels.json) for later submission.
   - This feedback file uses the [labels schema](https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/labels.json) defined by Azure AI Document Intelligence.
 
-Below is an example of the user interaction experience demonstrated in the notebook.
-
-![Demonstration of canvas selection](./media/canvas-selection.gif)
-
 At this point, in a real-world scenario, the PDF, feedback file, and analysis results would be packaged and submitted for human review. You could then determine when to trigger the process for retraining. This step is not represented in the experiment.
 
 - The feedback package is then submitted to the existing Azure Storage Blob container for the model. This represents looping back to the **Collect** and **Process** stage of the MLOps process.
-- Again, the model training data, including the new feeedback, is processed using the Azure SDK for Python to incorporate the feedback to the model in Azure AI Document Intelligence. This represents the **Train** stage of the MLOps process.
+- Again, the model training data, including the new feedback, is processed using the Azure SDK for Python to incorporate the feedback to the model in Azure AI Document Intelligence. This represents the **Train** stage of the MLOps process.
 - The model is registered with Azure AI Document Intelligence, following semantic versioning. This represents the **Package** stage of the MLOps process.
   - For the purposes of this experiment, the change we have introduced to the model is considered minor. This is because we have introduced new training data based on the current document template. The version of the model will now be `1.1.0`.
 
