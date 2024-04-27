@@ -8,7 +8,7 @@ The goal is to showcase how a feedback mechanism can be implemented to allow the
 
 ## Flow
 
-This experiment adapts the concepts of MLOps for machine learning projects to the domain of Azure AI Document Intelligence. 
+This experiment adapts the concepts of MLOps for machine learning projects to the domain of Azure AI Document Intelligence.
 
 ![Diagram representing the lifecycle of MLOps; collecting data, processing it, training a model, validating, packaging, and deploying, completing the cycle with monitoring and feedback](./media/mlops-flow.png)
 
@@ -71,13 +71,13 @@ The Dev Container comes pre-configured with the necessary tools to deploy the Az
 > [!IMPORTANT]
 > You must run this step to deploy the infrastructure before running the sample notebook. The notebook will not work without the necessary Azure resources deployed.
 
-To deploy the infrastructure, run the [`Deploy-Infrastucture.ps1`](./Deploy-Infrastructure.ps1) script from the terminal in Visual Studio Code when the Dev Container is running.
+To deploy the infrastructure, run the [`Setup-Environment.ps1`](./Setup-Environment.ps1) script from the terminal in Visual Studio Code when the Dev Container is running.
 
 > [!NOTE]
 > If you have not logged into the Azure CLI, you will need to run `az login --use-device-code` to authenticate from within the Dev Container. Running `az account set --subscription <subscription-id>` will also set the default subscription to the one you want to use if you have multiple subscriptions.
 
 ```powershell
-./Deploy-Infrastructure.ps1
+./Setup-Environment.ps1 -DeploymentName docintel-feedback -Location westeurope -SkipInfrastructure $false
 ```
 
 ### Run the sample notebook
