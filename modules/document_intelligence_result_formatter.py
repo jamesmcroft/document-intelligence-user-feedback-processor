@@ -16,16 +16,18 @@ class DocumentIntelligenceResultFormatter:
         :return: The reformatted result of the Document Intelligence labels as a dictionary.
         """
 
+        ordered_labels = sorted(result, key=lambda x: x.label)
+    
         labels_result = {
             "$schema": "https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/labels.json",
             "document": pdf_file_name,
-            "labels": [label.as_label() for label in result]
+            "labels": [label.as_label() for label in ordered_labels]
         }
 
         r = json.dumps(labels_result)
 
         with open(json_file_path, 'w') as json_file:
-            json.dump(json.loads(r), json_file, indent=2, cls=AzureJSONEncoder)
+            json.dump(json.loads(r), json_file, indent=4, cls=AzureJSONEncoder)
 
         return labels_result
 
@@ -53,7 +55,7 @@ class DocumentIntelligenceResultFormatter:
         r = json.dumps(ocr_result)
 
         with open(json_file_path, 'w') as json_file:
-            json.dump(json.loads(r), json_file, indent=2, cls=AzureJSONEncoder)
+            json.dump(json.loads(r), json_file, indent=4, cls=AzureJSONEncoder)
 
         return ocr_result
 

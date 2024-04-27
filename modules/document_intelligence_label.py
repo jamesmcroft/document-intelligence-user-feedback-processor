@@ -1,4 +1,4 @@
-from modules.document_canvas import (LabelRegion)
+from modules.document_canvas import (DocumentLabel)
 from ipywidgets import (Dropdown, Text, VBox, Label)
 
 
@@ -8,20 +8,20 @@ class DocumentIntelligenceLabel:
     This class is used to create a visual object that allows users to label regions in a document.
     """
 
-    def __init__(self, label_region: LabelRegion, fields):
+    def __init__(self, label: DocumentLabel, fields: dict):
         """Initializes the DocumentIntelligenceLabel.
 
         :param border: The object representing the region to label.
         :param fields: The fields to choose from when labeling the region.
         """
 
-        self.label = ''
-        self.field = ''
-        self.item_row_number = ''
-        self.item_row_field = ''
+        self.label = label.label
+        self.field = label.field
+        self.item_row_number = label.row_number
+        self.item_row_field = label.row_field
         self.label_type = None
-        self.text = label_region.extract_text()
-        self.border = label_region
+        self.text = label.content
+        self.border = label
         self.fields = fields
 
         self.ui_field = None
@@ -45,7 +45,8 @@ class DocumentIntelligenceLabel:
         self.ui_field = Dropdown(
             options=field_options,
             description='Field:',
-            continuous_update=True
+            continuous_update=True,
+            value=self.field
         )
         self.ui_field.observe(self.__handle_field_change__, names='value')
 
@@ -61,6 +62,8 @@ class DocumentIntelligenceLabel:
 
         self.ui_container = VBox(
             [self.ui_field, self.ui_text, self.ui_bounding_box])
+        
+        self.__setup_field_ui__()
 
         return self.ui_container
 
@@ -71,9 +74,11 @@ class DocumentIntelligenceLabel:
         """
 
         self.field = change.new
+        self.__setup_field_ui__()
 
+    def __setup_field_ui__(self):
         field_option = next(
-            (x for x in self.fields['fields'] if x['fieldKey'] == change.new), None)
+            (x for x in self.fields['fields'] if x['fieldKey'] == self.field), None)
         if field_option:
             if field_option['fieldType'] == "array":
                 itemType = field_option['itemType']
@@ -81,7 +86,7 @@ class DocumentIntelligenceLabel:
 
                 # Add a text box to the existing vbox for the row number
                 self.ui_row_number = Text(
-                    value='',
+                    value=self.item_row_number,
                     description='Row Number:',
                     continuous_update=True
                 )
@@ -95,7 +100,8 @@ class DocumentIntelligenceLabel:
                 self.ui_row_field = Dropdown(
                     options=row_field_options,
                     description='Row Field:',
-                    continuous_update=True
+                    continuous_update=True,
+                    value=self.item_row_field
                 )
                 self.ui_row_field.observe(
                     self.__handle_row_field_change__, names='value')
@@ -104,10 +110,13 @@ class DocumentIntelligenceLabel:
                     [self.ui_row_number, self.ui_row_field])
                 self.ui_container.children = self.ui_container.children + \
                     (self.ui_row_container,)
+                
+                self.__set_row_label__()
             else:
                 self.label = self.field
 
                 if field_option['fieldType'] == "signature":
+                    self.text = ""
                     self.label_type = "region"
                 else:
                     self.label_type = None
@@ -147,6 +156,7 @@ class DocumentIntelligenceLabel:
 
         self.label = f"{
             self.field}/{self.item_row_number}/{self.item_row_field}"
+        self.label_type = None
 
     def as_label(self):
         """Returns the label in the desired Document Intelligence format.

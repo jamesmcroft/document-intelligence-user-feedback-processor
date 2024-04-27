@@ -1,10 +1,10 @@
 {
     "status": "succeeded",
-    "createdDateTime": "2024-04-27T16:38:36Z",
-    "lastUpdatedDateTime": "2024-04-27T16:38:36Z",
+    "createdDateTime": "2024-04-27T17:35:21Z",
+    "lastUpdatedDateTime": "2024-04-27T17:35:21Z",
     "analyzeResult": {
         "apiVersion": "2023-07-31",
-        "modelId": "prebuilt-layout",
+        "modelId": "invoices-1.1.0",
         "content": "CONTOSO Innovation drives progress\n111st Avenue Redmond, WA 67891 (201) 555-0101 (201) 555-0102\nINVOICE\nCUSTOMER MADE Apps Kingdom Street London W2 6BD United Kingdom\nISSUED: 2/27/2024\nPRODUCT ID\nUNIT PRICE\nQUANTITY\nTOTAL PRICE\n5-08-XX\n9.50\n1.0\n9.50\n5-09-XX\n5.00\n5.0\n25.00\n5-13-XX\n11.50\n1.0\n11.50\n5-14-XX\n5.25\n3.5\n18.38\nTOTAL\n10.5\n64.38\nDistributor signature:\nDate: 2/27/2024\nCustomer signature:\nDate:",
         "languages": [],
         "pages": [
@@ -1870,808 +1870,7 @@
                 "formulas": []
             }
         ],
-        "paragraphs": [
-            {
-                "role": null,
-                "content": "CONTOSO Innovation drives progress",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            1.0601,
-                            1.184,
-                            2.698,
-                            1.184,
-                            2.698,
-                            1.6949,
-                            1.0601,
-                            1.6949
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 0,
-                        "length": 34
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "111st Avenue Redmond, WA 67891 (201) 555-0101 (201) 555-0102",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            1.0601,
-                            1.8668,
-                            2.3733,
-                            1.8668,
-                            2.3733,
-                            2.5304,
-                            1.0601,
-                            2.5304
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 35,
-                        "length": 60
-                    }
-                ]
-            },
-            {
-                "role": "title",
-                "content": "INVOICE",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.0598,
-                            1.2174,
-                            7.416,
-                            1.2174,
-                            7.416,
-                            1.523,
-                            6.0598,
-                            1.523
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 96,
-                        "length": 7
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "CUSTOMER MADE Apps Kingdom Street London W2 6BD United Kingdom",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.4316,
-                            1.862,
-                            7.4359,
-                            1.8668,
-                            7.4311,
-                            2.8647,
-                            6.4268,
-                            2.8598
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 104,
-                        "length": 62
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "ISSUED: 2/27/2024",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.0837,
-                            3.2083,
-                            7.4112,
-                            3.2083,
-                            7.4112,
-                            3.3563,
-                            6.0837,
-                            3.3563
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 167,
-                        "length": 17
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "PRODUCT ID",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            4.5177,
-                            4.2396,
-                            4.5177,
-                            4.2396,
-                            4.7988,
-                            0.9917,
-                            4.7988
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 185,
-                        "length": 10
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "UNIT PRICE",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            4.2396,
-                            4.5177,
-                            5.311,
-                            4.5177,
-                            5.311,
-                            4.7988,
-                            4.2396,
-                            4.7988
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 196,
-                        "length": 10
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "QUANTITY",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.311,
-                            4.5177,
-                            6.3021,
-                            4.5177,
-                            6.3021,
-                            4.7988,
-                            5.311,
-                            4.7988
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 207,
-                        "length": 8
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "TOTAL PRICE",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            4.5177,
-                            7.4941,
-                            4.5177,
-                            7.4941,
-                            4.7921,
-                            6.3021,
-                            4.7988
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 216,
-                        "length": 11
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5-08-XX",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            4.7988,
-                            4.2396,
-                            4.7988,
-                            4.2396,
-                            5.1267,
-                            0.9917,
-                            5.1267
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 228,
-                        "length": 7
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "9.50",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            4.2396,
-                            4.7988,
-                            5.311,
-                            4.7988,
-                            5.311,
-                            5.1267,
-                            4.2396,
-                            5.1267
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 236,
-                        "length": 4
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "1.0",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.311,
-                            4.7988,
-                            6.3021,
-                            4.7988,
-                            6.3021,
-                            5.1334,
-                            5.311,
-                            5.1267
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 241,
-                        "length": 3
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "9.50",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            4.7988,
-                            7.4941,
-                            4.7921,
-                            7.4941,
-                            5.1334,
-                            6.3021,
-                            5.1334
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 245,
-                        "length": 4
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5-09-XX",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            5.1267,
-                            4.2396,
-                            5.1267,
-                            4.2396,
-                            5.4547,
-                            0.9917,
-                            5.4547
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 250,
-                        "length": 7
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5.00",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            4.2396,
-                            5.1267,
-                            5.311,
-                            5.1267,
-                            5.311,
-                            5.4547,
-                            4.2396,
-                            5.4547
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 258,
-                        "length": 4
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5.0",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.311,
-                            5.1267,
-                            6.3021,
-                            5.1334,
-                            6.3021,
-                            5.4547,
-                            5.311,
-                            5.4547
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 263,
-                        "length": 3
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "25.00",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            5.1334,
-                            7.4941,
-                            5.1334,
-                            7.4941,
-                            5.4547,
-                            6.3021,
-                            5.4547
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 267,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5-13-XX",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            5.4547,
-                            4.2396,
-                            5.4547,
-                            4.2396,
-                            5.7826,
-                            0.9917,
-                            5.7826
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 273,
-                        "length": 7
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "11.50",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            4.2396,
-                            5.4547,
-                            5.311,
-                            5.4547,
-                            5.311,
-                            5.7826,
-                            4.2396,
-                            5.7826
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 281,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "1.0",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.311,
-                            5.4547,
-                            6.3021,
-                            5.4547,
-                            6.3021,
-                            5.7826,
-                            5.311,
-                            5.7826
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 287,
-                        "length": 3
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "11.50",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            5.4547,
-                            7.4941,
-                            5.4547,
-                            7.4941,
-                            5.7826,
-                            6.3021,
-                            5.7826
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 291,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5-14-XX",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            5.7826,
-                            4.2396,
-                            5.7826,
-                            4.2463,
-                            6.1105,
-                            0.9917,
-                            6.1105
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 297,
-                        "length": 7
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "5.25",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            4.2396,
-                            5.7826,
-                            5.311,
-                            5.7826,
-                            5.3177,
-                            6.1105,
-                            4.2463,
-                            6.1105
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 305,
-                        "length": 4
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "3.5",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.311,
-                            5.7826,
-                            6.3021,
-                            5.7826,
-                            6.3021,
-                            6.1105,
-                            5.3177,
-                            6.1105
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 310,
-                        "length": 3
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "18.38",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            5.7826,
-                            7.4941,
-                            5.7826,
-                            7.4941,
-                            6.1172,
-                            6.3021,
-                            6.1105
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 314,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "TOTAL",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9917,
-                            6.1105,
-                            4.2463,
-                            6.1105,
-                            4.2463,
-                            6.4318,
-                            0.985,
-                            6.4318
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 320,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "10.5",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.3177,
-                            6.1105,
-                            6.3021,
-                            6.1105,
-                            6.3021,
-                            6.4318,
-                            5.3177,
-                            6.4318
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 326,
-                        "length": 4
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "64.38",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            6.3021,
-                            6.1105,
-                            7.4941,
-                            6.1172,
-                            7.5008,
-                            6.4318,
-                            6.3021,
-                            6.4318
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 331,
-                        "length": 5
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "Distributor signature:",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9916,
-                            7.1786,
-                            5.7161,
-                            7.1786,
-                            5.7094,
-                            7.5062,
-                            0.9916,
-                            7.5128
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 337,
-                        "length": 22
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "Date: 2/27/2024",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.7161,
-                            7.1786,
-                            7.4961,
-                            7.1786,
-                            7.4961,
-                            7.5062,
-                            5.7094,
-                            7.5062
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 360,
-                        "length": 15
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "Customer signature:",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            0.9916,
-                            7.5128,
-                            5.7094,
-                            7.5062,
-                            5.7094,
-                            7.827,
-                            0.9916,
-                            7.8337
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 376,
-                        "length": 19
-                    }
-                ]
-            },
-            {
-                "role": null,
-                "content": "Date:",
-                "boundingRegions": [
-                    {
-                        "pageNumber": 1,
-                        "polygon": [
-                            5.7094,
-                            7.5062,
-                            7.4961,
-                            7.5062,
-                            7.4961,
-                            7.827,
-                            5.7094,
-                            7.827
-                        ]
-                    }
-                ],
-                "spans": [
-                    {
-                        "offset": 396,
-                        "length": 5
-                    }
-                ]
-            }
-        ],
+        "paragraphs": [],
         "tables": [
             {
                 "rowCount": 6,
@@ -3537,6 +2736,747 @@
         ],
         "keyValuePairs": [],
         "styles": [],
-        "documents": []
+        "documents": [
+            {
+                "docType": "invoices-1.1.0:invoices-1.1.0",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.0,
+                            0.0,
+                            8.5,
+                            0.0,
+                            8.5,
+                            11.0,
+                            0.0,
+                            11.0
+                        ]
+                    }
+                ],
+                "spans": [
+                    {
+                        "offset": 0,
+                        "length": 401
+                    }
+                ],
+                "fields": {
+                    "Customer Name": {
+                        "valueType": "string",
+                        "value": "MADE Apps",
+                        "content": "MADE Apps",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.65,
+                                    2.03,
+                                    7.425,
+                                    2.03,
+                                    7.425,
+                                    2.2,
+                                    6.65,
+                                    2.2
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 113,
+                                "length": 9
+                            }
+                        ],
+                        "confidence": 0.994
+                    },
+                    "Customer Signature Date": {
+                        "valueType": "string",
+                        "value": null,
+                        "content": null,
+                        "boundingRegions": [],
+                        "spans": [],
+                        "confidence": 0.935
+                    },
+                    "Total Quantity": {
+                        "valueType": "string",
+                        "value": "10.5",
+                        "content": "10.5",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    5.465,
+                                    6.205,
+                                    5.75,
+                                    6.205,
+                                    5.75,
+                                    6.35,
+                                    5.465,
+                                    6.35
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 326,
+                                "length": 4
+                            }
+                        ],
+                        "confidence": 0.96
+                    },
+                    "Distributor Signature": {
+                        "valueType": "signature",
+                        "value": "signed",
+                        "content": null,
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    2.465,
+                                    6.955,
+                                    4.725,
+                                    6.955,
+                                    4.725,
+                                    7.725,
+                                    2.465,
+                                    7.725
+                                ]
+                            }
+                        ],
+                        "spans": [],
+                        "confidence": 0.995
+                    },
+                    "Issued Date": {
+                        "valueType": "string",
+                        "value": "2/27/2024",
+                        "content": "2/27/2024",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.74,
+                                    3.21,
+                                    7.41,
+                                    3.21,
+                                    7.41,
+                                    3.36,
+                                    6.74,
+                                    3.36
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 175,
+                                "length": 9
+                            }
+                        ],
+                        "confidence": 0.995
+                    },
+                    "Paid Stamp": {
+                        "valueType": "signature",
+                        "value": "unsigned",
+                        "content": null,
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.42,
+                                    1.555,
+                                    6.21,
+                                    1.555,
+                                    6.21,
+                                    2.995,
+                                    4.42,
+                                    2.995
+                                ]
+                            }
+                        ],
+                        "spans": [],
+                        "confidence": 0.995
+                    },
+                    "Customer Address": {
+                        "valueType": "string",
+                        "value": "Kingdom Street London W2 6BD United Kingdom",
+                        "content": "Kingdom Street London W2 6BD United Kingdom",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.43,
+                                    2.205,
+                                    7.425,
+                                    2.205,
+                                    7.425,
+                                    2.865,
+                                    6.43,
+                                    2.865
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 123,
+                                "length": 43
+                            }
+                        ],
+                        "confidence": 0.944
+                    },
+                    "Customer Signature": {
+                        "valueType": "signature",
+                        "value": "unsigned",
+                        "content": null,
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    2.58,
+                                    7.695,
+                                    3.875,
+                                    7.695,
+                                    3.875,
+                                    8.465,
+                                    2.58,
+                                    8.465
+                                ]
+                            }
+                        ],
+                        "spans": [],
+                        "confidence": 0.995
+                    },
+                    "Total Price": {
+                        "valueType": "string",
+                        "value": "64.38",
+                        "content": "64.38",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.445,
+                                    6.205,
+                                    6.84,
+                                    6.205,
+                                    6.84,
+                                    6.35,
+                                    6.445,
+                                    6.35
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 331,
+                                "length": 5
+                            }
+                        ],
+                        "confidence": 0.961
+                    },
+                    "Distributor Signature Date": {
+                        "valueType": "string",
+                        "value": "2/27/2024",
+                        "content": "2/27/2024",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.265,
+                                    7.28,
+                                    6.93,
+                                    7.28,
+                                    6.93,
+                                    7.425,
+                                    6.265,
+                                    7.425
+                                ]
+                            }
+                        ],
+                        "spans": [
+                            {
+                                "offset": 366,
+                                "length": 9
+                            }
+                        ],
+                        "confidence": 0.995
+                    },
+                    "Items": {
+                        "valueType": "list",
+                        "value": [
+                            {
+                                "valueType": "dictionary",
+                                "value": {
+                                    "PRODUCT ID": {
+                                        "valueType": "string",
+                                        "value": "5-08-XX",
+                                        "content": "5-08-XX",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    1.125,
+                                                    4.91,
+                                                    1.675,
+                                                    4.91,
+                                                    1.675,
+                                                    5.045,
+                                                    1.125,
+                                                    5.045
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 228,
+                                                "length": 7
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "UNIT PRICE": {
+                                        "valueType": "string",
+                                        "value": "9.50",
+                                        "content": "9.50",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    4.385,
+                                                    4.885,
+                                                    4.69,
+                                                    4.885,
+                                                    4.69,
+                                                    5.055,
+                                                    4.385,
+                                                    5.055
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 236,
+                                                "length": 4
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "QUANTITY": {
+                                        "valueType": "string",
+                                        "value": "1.0",
+                                        "content": "1.0",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    5.47,
+                                                    4.91,
+                                                    5.65,
+                                                    4.91,
+                                                    5.65,
+                                                    5.035,
+                                                    5.47,
+                                                    5.035
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 241,
+                                                "length": 3
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "TOTAL PRICE": {
+                                        "valueType": "string",
+                                        "value": "9.50",
+                                        "content": "9.50",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    6.445,
+                                                    4.905,
+                                                    6.745,
+                                                    4.905,
+                                                    6.745,
+                                                    5.04,
+                                                    6.445,
+                                                    5.04
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 245,
+                                                "length": 4
+                                            }
+                                        ],
+                                        "confidence": null
+                                    }
+                                },
+                                "content": null,
+                                "boundingRegions": [],
+                                "spans": [],
+                                "confidence": null
+                            },
+                            {
+                                "valueType": "dictionary",
+                                "value": {
+                                    "PRODUCT ID": {
+                                        "valueType": "string",
+                                        "value": "5-09-XX",
+                                        "content": "5-09-XX",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    1.13,
+                                                    5.235,
+                                                    1.665,
+                                                    5.235,
+                                                    1.665,
+                                                    5.375,
+                                                    1.13,
+                                                    5.375
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 250,
+                                                "length": 7
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "UNIT PRICE": {
+                                        "valueType": "string",
+                                        "value": "5.00",
+                                        "content": "5.00",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    4.38,
+                                                    5.215,
+                                                    4.685,
+                                                    5.215,
+                                                    4.685,
+                                                    5.385,
+                                                    4.38,
+                                                    5.385
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 258,
+                                                "length": 4
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "QUANTITY": {
+                                        "valueType": "string",
+                                        "value": "5.0",
+                                        "content": "5.0",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    5.445,
+                                                    5.23,
+                                                    5.65,
+                                                    5.23,
+                                                    5.65,
+                                                    5.37,
+                                                    5.445,
+                                                    5.37
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 263,
+                                                "length": 3
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "TOTAL PRICE": {
+                                        "valueType": "string",
+                                        "value": "25.00",
+                                        "content": "25.00",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    6.45,
+                                                    5.215,
+                                                    6.835,
+                                                    5.215,
+                                                    6.835,
+                                                    5.38,
+                                                    6.45,
+                                                    5.38
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 267,
+                                                "length": 5
+                                            }
+                                        ],
+                                        "confidence": null
+                                    }
+                                },
+                                "content": null,
+                                "boundingRegions": [],
+                                "spans": [],
+                                "confidence": null
+                            },
+                            {
+                                "valueType": "dictionary",
+                                "value": {
+                                    "PRODUCT ID": {
+                                        "valueType": "string",
+                                        "value": "5-13-XX",
+                                        "content": "5-13-XX",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    1.13,
+                                                    5.56,
+                                                    1.67,
+                                                    5.56,
+                                                    1.67,
+                                                    5.69,
+                                                    1.13,
+                                                    5.69
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 273,
+                                                "length": 7
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "UNIT PRICE": {
+                                        "valueType": "string",
+                                        "value": "11.50",
+                                        "content": "11.50",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    4.4,
+                                                    5.555,
+                                                    4.75,
+                                                    5.555,
+                                                    4.75,
+                                                    5.685,
+                                                    4.4,
+                                                    5.685
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 281,
+                                                "length": 5
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "QUANTITY": {
+                                        "valueType": "string",
+                                        "value": "1.0",
+                                        "content": "1.0",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    5.465,
+                                                    5.555,
+                                                    5.655,
+                                                    5.555,
+                                                    5.655,
+                                                    5.69,
+                                                    5.465,
+                                                    5.69
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 287,
+                                                "length": 3
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "TOTAL PRICE": {
+                                        "valueType": "string",
+                                        "value": "11.50",
+                                        "content": "11.50",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    6.46,
+                                                    5.55,
+                                                    6.825,
+                                                    5.55,
+                                                    6.825,
+                                                    5.69,
+                                                    6.46,
+                                                    5.69
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 291,
+                                                "length": 5
+                                            }
+                                        ],
+                                        "confidence": null
+                                    }
+                                },
+                                "content": null,
+                                "boundingRegions": [],
+                                "spans": [],
+                                "confidence": null
+                            },
+                            {
+                                "valueType": "dictionary",
+                                "value": {
+                                    "PRODUCT ID": {
+                                        "valueType": "string",
+                                        "value": "5-14-XX",
+                                        "content": "5-14-XX",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    1.13,
+                                                    5.885,
+                                                    1.665,
+                                                    5.885,
+                                                    1.665,
+                                                    6.025,
+                                                    1.13,
+                                                    6.025
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 297,
+                                                "length": 7
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "UNIT PRICE": {
+                                        "valueType": "string",
+                                        "value": "5.25",
+                                        "content": "5.25",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    4.385,
+                                                    5.88,
+                                                    4.68,
+                                                    5.88,
+                                                    4.68,
+                                                    6.02,
+                                                    4.385,
+                                                    6.02
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 305,
+                                                "length": 4
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "QUANTITY": {
+                                        "valueType": "string",
+                                        "value": "3.5",
+                                        "content": "3.5",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    5.455,
+                                                    5.885,
+                                                    5.655,
+                                                    5.885,
+                                                    5.655,
+                                                    6.02,
+                                                    5.455,
+                                                    6.02
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 310,
+                                                "length": 3
+                                            }
+                                        ],
+                                        "confidence": null
+                                    },
+                                    "TOTAL PRICE": {
+                                        "valueType": "string",
+                                        "value": "18.38",
+                                        "content": "18.38",
+                                        "boundingRegions": [
+                                            {
+                                                "pageNumber": 1,
+                                                "polygon": [
+                                                    6.46,
+                                                    5.88,
+                                                    6.835,
+                                                    5.88,
+                                                    6.835,
+                                                    6.02,
+                                                    6.46,
+                                                    6.02
+                                                ]
+                                            }
+                                        ],
+                                        "spans": [
+                                            {
+                                                "offset": 314,
+                                                "length": 5
+                                            }
+                                        ],
+                                        "confidence": null
+                                    }
+                                },
+                                "content": null,
+                                "boundingRegions": [],
+                                "spans": [],
+                                "confidence": null
+                            }
+                        ],
+                        "content": null,
+                        "boundingRegions": [],
+                        "spans": [],
+                        "confidence": null
+                    }
+                },
+                "confidence": 0.995
+            }
+        ]
     }
 }

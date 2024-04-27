@@ -4,6 +4,7 @@ azure-identity==1.15.0
 azure-storage-blob==12.19.0
 ipycanvas==0.13.1
 ipykernel==6.29.2
+jupyter-bbox-widget==0.5.0
 matplotlib==3.8.3
 notebook==7.1.0
 numpy==1.26.4
