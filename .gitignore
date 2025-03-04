@@ -538,3 +538,4 @@ dist
 
 # Project Specifics
 _archive/
+*Outputs.json

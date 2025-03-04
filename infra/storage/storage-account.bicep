@@ -1,3 +1,5 @@
+import { roleAssignmentInfo } from '../security/managed-identity.bicep'
+
 @description('Name of the resource.')
 param name string
 @description('Location to deploy the resource. Defaults to the location of the resource group.')
@@ -5,12 +7,10 @@ param location string = resourceGroup().location
 @description('Tags for the resource.')
 param tags object = {}
 
-type roleAssignmentInfo = {
-  roleDefinitionId: string
-  principalId: string
-}
-
+@export()
+@description('SKU information for Storage Account.')
 type skuInfo = {
+  @description('Name of the SKU.')
   name:
     | 'Premium_LRS'
     | 'Premium_ZRS'
@@ -22,9 +22,14 @@ type skuInfo = {
     | 'Standard_ZRS'
 }
 
+@export()
+@description('Information about the blob container retention policy for the Storage Account.')
 type blobContainerRetentionInfo = {
+  @description('Indicates whether permanent deletion is allowed for blob containers.')
   allowPermanentDelete: bool
+  @description('Number of days to retain blobs.')
   days: int
+  @description('Indicates whether the retention policy is enabled.')
   enabled: bool
 }
 
@@ -49,7 +54,7 @@ param disableLocalAuth bool = true
 @description('Role assignments to create for the Storage Account.')
 param roleAssignments roleAssignmentInfo[] = []
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: name
   location: location
   tags: tags
@@ -58,11 +63,14 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   properties: {
     accessTier: startsWith(sku.name, 'Premium') ? 'Premium' : accessTier
     networkAcls: {
-      bypass: 'AzureServices'
       defaultAction: 'Allow'
+      bypass: 'AzureServices'
+      ipRules: []
+      virtualNetworkRules: []
     }
     allowSharedKeyAccess: !disableLocalAuth
     supportsHttpsTrafficOnly: true
+    minimumTlsVersion: 'TLS1_2'
     encryption: {
       services: {
         blob: {
@@ -82,7 +90,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     }
   }
 
-  resource blobServices 'blobServices@2022-09-01' = {
+  resource blobServices 'blobServices@2023-05-01' = {
     name: 'default'
     properties: {
       containerDeleteRetentionPolicy: blobContainerRetention
@@ -97,7 +105,7 @@ resource assignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [
     properties: {
       principalId: roleAssignment.principalId
       roleDefinitionId: roleAssignment.roleDefinitionId
-      principalType: 'ServicePrincipal'
+      principalType: roleAssignment.principalType
     }
   }
 ]

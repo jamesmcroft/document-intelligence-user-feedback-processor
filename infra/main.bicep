@@ -1,3 +1,6 @@
+import { modelDeploymentInfo, raiPolicyInfo } from './ai_ml/ai-services.bicep'
+import { identityInfo } from './security/managed-identity.bicep'
+
 targetScope = 'subscription'
 
 @minLength(1)
@@ -13,86 +16,353 @@ param location string
 param resourceGroupName string = ''
 
 @description('Tags for all resources.')
-param tags object = {}
+param tags object = {
+  WorkloadName: workloadName
+  Environment: 'Dev'
+}
+
+@description('Responsible AI policies for the Azure AI Services instance.')
+param raiPolicies raiPolicyInfo[] = [
+  {
+    name: workloadName
+    mode: 'Blocking'
+    prompt: {}
+    completion: {}
+  }
+]
+
+@description('Identities to assign roles to.')
+param identities identityInfo[] = []
 
 var abbrs = loadJsonContent('./abbreviations.json')
 var roles = loadJsonContent('./roles.json')
 var resourceToken = toLower(uniqueString(subscription().id, workloadName, location))
 
-resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: !empty(resourceGroupName) ? resourceGroupName : '${abbrs.resourceGroup}${workloadName}'
+var acaAddressPrefix = '10.0.0.0/23'
+
+resource contributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.general.contributor
+}
+
+resource resourceGroup 'Microsoft.Resources/resourceGroups@2024-03-01' = {
+  name: !empty(resourceGroupName) ? resourceGroupName : '${abbrs.managementGovernance.resourceGroup}${workloadName}'
   location: location
   tags: union(tags, {})
 }
 
-module managedIdentity './security/managed-identity.bicep' = {
-  name: '${abbrs.managedIdentity}${resourceToken}'
+var contributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: contributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+module resourceGroupRoleAssignment './security/resource-group-role-assignment.bicep' = {
+  name: '${resourceGroup.name}-role-assignment'
   scope: resourceGroup
   params: {
-    name: '${abbrs.managedIdentity}${resourceToken}'
-    location: location
-    tags: union(tags, { Workload: workloadName, Capability: 'Identity' })
+    roleAssignments: concat(contributorIdentityAssignments, [])
   }
 }
 
-resource cognitiveServicesUser 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
+resource keyVaultContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
   scope: resourceGroup
-  name: roles.cognitiveServicesUser
+  name: roles.security.keyVaultContributor
 }
 
-module documentIntelligence './ai_ml/document-intelligence.bicep' = {
-  name: '${abbrs.documentIntelligence}${resourceToken}'
+var keyVaultContributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: keyVaultContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var keyVaultName = '${abbrs.security.keyVault}${resourceToken}'
+module keyVault './security/key-vault.bicep' = {
+  name: keyVaultName
   scope: resourceGroup
   params: {
-    name: '${abbrs.documentIntelligence}${resourceToken}'
+    name: keyVaultName
     location: location
-    tags: union(tags, { Workload: workloadName, Capability: 'Document Intelligence' })
-    disableLocalAuth: false
+    tags: union(tags, {})
+    roleAssignments: concat(keyVaultContributorIdentityAssignments, [])
+  }
+}
+
+var logAnalyticsWorkspaceName = '${abbrs.managementGovernance.logAnalyticsWorkspace}${resourceToken}'
+module logAnalyticsWorkspace './management_governance/log-analytics-workspace.bicep' = {
+  name: logAnalyticsWorkspaceName
+  scope: resourceGroup
+  params: {
+    name: logAnalyticsWorkspaceName
+    location: location
+    tags: union(tags, {})
+  }
+}
+
+var applicationInsightsName = '${abbrs.managementGovernance.applicationInsights}${resourceToken}'
+module applicationInsights './management_governance/application-insights.bicep' = {
+  name: applicationInsightsName
+  scope: resourceGroup
+  params: {
+    name: applicationInsightsName
+    location: location
+    tags: union(tags, {})
+    logAnalyticsWorkspaceName: logAnalyticsWorkspace.outputs.name
+  }
+}
+
+resource acrPushRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.containers.acrPush
+}
+
+resource acrPullRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.containers.acrPull
+}
+
+var acrPushRoleAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: acrPushRole.id
+    principalType: identity.principalType
+  }
+]
+
+var acrPullRoleAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: acrPullRole.id
+    principalType: identity.principalType
+  }
+]
+
+var containerRegistryName = '${abbrs.containers.containerRegistry}${resourceToken}'
+module containerRegistry './containers/container-registry.bicep' = {
+  name: containerRegistryName
+  scope: resourceGroup
+  params: {
+    name: containerRegistryName
+    location: location
+    tags: union(tags, {})
+    sku: {
+      name: 'Standard'
+    }
+    adminUserEnabled: true
+    roleAssignments: concat(acrPushRoleAssignments, acrPullRoleAssignments, [])
+  }
+}
+
+resource cognitiveServicesUserRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.ai.cognitiveServicesUser
+}
+
+resource cognitiveServicesContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.ai.cognitiveServicesContributor
+}
+
+var cognitiveServicesUserRoleAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: cognitiveServicesUserRole.id
+    principalType: identity.principalType
+  }
+]
+
+var cognitiveServicesContributorRoleAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: cognitiveServicesContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var aiServicesName = '${abbrs.ai.aiServices}${resourceToken}'
+module aiServices './ai_ml/ai-services.bicep' = {
+  name: aiServicesName
+  scope: resourceGroup
+  params: {
+    name: aiServicesName
+    location: location
+    tags: union(tags, {})
+    raiPolicies: raiPolicies
+    deployments: []
+    roleAssignments: concat(cognitiveServicesUserRoleAssignments, cognitiveServicesContributorRoleAssignments, [])
+  }
+}
+
+// Require self-referencing role assignment for AI Services identity to access Azure OpenAI.
+var aiServicesRoleAssignmentName = '${aiServicesName}-role-assignment'
+module aiServicesRoleAssignment './security/resource-role-assignment.json' = {
+  name: aiServicesRoleAssignmentName
+  scope: resourceGroup
+  params: {
+    resourceId: aiServices.outputs.id
     roleAssignments: [
       {
-        principalId: managedIdentity.outputs.principalId
-        roleDefinitionId: cognitiveServicesUser.id
+        principalId: aiServices.outputs.principalId
+        roleDefinitionId: cognitiveServicesUserRole.id
+        principalType: 'ServicePrincipal'
+      }
+      {
+        principalId: aiServices.outputs.principalId
+        roleDefinitionId: cognitiveServicesContributorRole.id
+        principalType: 'ServicePrincipal'
       }
     ]
   }
 }
 
-resource storageBlobDataContributor 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
+// Storage account roles required for interacting with Azure AI Foundry
+resource storageAccountContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
   scope: resourceGroup
-  name: roles.storageBlobDataContributor
+  name: roles.storage.storageAccountContributor
 }
 
+resource storageBlobDataContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.storage.storageBlobDataContributor
+}
+
+resource storageFileDataPrivilegedContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.storage.storageFileDataPrivilegedContributor
+}
+
+resource storageTableDataContributorRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.storage.storageTableDataContributor
+}
+
+var storageAccountContributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: storageAccountContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var storageBlobDataContributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: storageBlobDataContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var storageFileDataPrivilegedContributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: storageFileDataPrivilegedContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var storageTableDataContributorIdentityAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: storageTableDataContributorRole.id
+    principalType: identity.principalType
+  }
+]
+
+var storageAccountName = '${abbrs.storage.storageAccount}${resourceToken}'
 module storageAccount './storage/storage-account.bicep' = {
-  name: '${abbrs.storageAccount}${resourceToken}'
+  name: storageAccountName
   scope: resourceGroup
   params: {
-    name: '${abbrs.storageAccount}${resourceToken}'
+    name: storageAccountName
     location: location
-    tags: union(tags, { Workload: workloadName, Capability: 'Document Storage' })
+    tags: union(tags, {})
     sku: {
       name: 'Standard_LRS'
     }
-    disableLocalAuth: false
-    roleAssignments: [
-      {
-        principalId: managedIdentity.outputs.principalId
-        roleDefinitionId: storageBlobDataContributor.id
-      }
-      {
-        principalId: documentIntelligence.outputs.systemIdentityPrincipalId
-        roleDefinitionId: storageBlobDataContributor.id
-      }
-    ]
+    roleAssignments: concat(
+      storageAccountContributorIdentityAssignments,
+      storageBlobDataContributorIdentityAssignments,
+      storageFileDataPrivilegedContributorIdentityAssignments,
+      storageTableDataContributorIdentityAssignments,
+      [
+        {
+          principalId: aiServices.outputs.principalId
+          roleDefinitionId: storageBlobDataContributorRole.id
+          principalType: 'ServicePrincipal'
+        }
+      ]
+    )
   }
 }
 
-module trainingDataContainer './storage/storage-blob-container.bicep' = {
-  name: '${abbrs.storageAccount}${resourceToken}-training-data'
+resource azureMLDataScientistRole 'Microsoft.Authorization/roleDefinitions@2022-05-01-preview' existing = {
+  scope: resourceGroup
+  name: roles.ai.azureMLDataScientist
+}
+
+var azureMLDataScientistRoleAssignments = [
+  for identity in identities: {
+    principalId: identity.principalId
+    roleDefinitionId: azureMLDataScientistRole.id
+    principalType: identity.principalType
+  }
+]
+
+var aiHubName = '${abbrs.ai.aiHub}${resourceToken}'
+module aiHub './ai_ml/ai-hub.bicep' = {
+  name: aiHubName
   scope: resourceGroup
   params: {
-    name: 'training-data'
-    storageAccountName: storageAccount.outputs.name
+    name: aiHubName
+    friendlyName: 'Hub - Document Intelligence User Feedback Processor'
+    descriptionInfo: 'Generated by the Document Intelligence User Feedback Processor repo'
+    location: location
+    tags: union(tags, {})
+    storageAccountId: storageAccount.outputs.id
+    keyVaultId: keyVault.outputs.id
+    applicationInsightsId: applicationInsights.outputs.id
+    containerRegistryId: containerRegistry.outputs.id
+    aiServicesName: aiServices.outputs.name
+    roleAssignments: concat(azureMLDataScientistRoleAssignments, [])
   }
+}
+
+var aiHubProjectName = '${abbrs.ai.aiHubProject}${resourceToken}'
+module aiHubProject './ai_ml/ai-hub-project.bicep' = {
+  name: aiHubProjectName
+  scope: resourceGroup
+  params: {
+    name: aiHubProjectName
+    friendlyName: 'Project - Document Intelligence User Feedback Processor'
+    descriptionInfo: 'Generated by the Document Intelligence User Feedback Processor repo'
+    location: location
+    tags: union(tags, {})
+    aiHubName: aiHub.outputs.name
+    serverlessModels: []
+    roleAssignments: concat(azureMLDataScientistRoleAssignments, [])
+  }
+}
+
+var containerAppsEnvironmentName = '${abbrs.containers.containerAppsEnvironment}${resourceToken}'
+module containerAppsEnvironment 'containers/container-apps-environment.bicep' = {
+  name: containerAppsEnvironmentName
+  scope: resourceGroup
+  params: {
+    name: containerAppsEnvironmentName
+    location: location
+    tags: union(tags, {})
+    logAnalyticsWorkspaceName: logAnalyticsWorkspace.outputs.name
+    applicationInsightsName: applicationInsights.outputs.name
+  }
+}
+
+output subscriptionInfo object = {
+  id: subscription().subscriptionId
+  tenantId: subscription().tenantId
 }
 
 output resourceGroupInfo object = {
@@ -102,23 +372,56 @@ output resourceGroupInfo object = {
   workloadName: workloadName
 }
 
-output managedIdentityInfo object = {
-  id: managedIdentity.outputs.id
-  name: managedIdentity.outputs.name
-  principalId: managedIdentity.outputs.principalId
-  clientId: managedIdentity.outputs.clientId
-}
-
 output storageAccountInfo object = {
   id: storageAccount.outputs.id
   name: storageAccount.outputs.name
-  trainingDataContainerName: trainingDataContainer.outputs.name
 }
 
-output documentIntelligenceInfo object = {
-  id: documentIntelligence.outputs.id
-  name: documentIntelligence.outputs.name
-  endpoint: documentIntelligence.outputs.endpoint
-  host: documentIntelligence.outputs.host
-  identityPrincipalId: documentIntelligence.outputs.systemIdentityPrincipalId
+output keyVaultInfo object = {
+  id: keyVault.outputs.id
+  name: keyVault.outputs.name
+  uri: keyVault.outputs.uri
+}
+
+output logAnalyticsWorkspaceInfo object = {
+  id: logAnalyticsWorkspace.outputs.id
+  name: logAnalyticsWorkspace.outputs.name
+  customerId: logAnalyticsWorkspace.outputs.customerId
+}
+
+output applicationInsightsInfo object = {
+  id: applicationInsights.outputs.id
+  name: applicationInsights.outputs.name
+}
+
+output containerRegistryInfo object = {
+  id: containerRegistry.outputs.id
+  name: containerRegistry.outputs.name
+  loginServer: containerRegistry.outputs.loginServer
+}
+
+output aiServicesInfo object = {
+  id: aiServices.outputs.id
+  name: aiServices.outputs.name
+  endpoint: aiServices.outputs.endpoint
+  host: aiServices.outputs.host
+  openAIEndpoint: aiServices.outputs.openAIEndpoint
+  openAIHost: aiServices.outputs.openAIHost
+}
+
+output aiHubInfo object = {
+  id: aiHub.outputs.id
+  name: aiHub.outputs.name
+}
+
+output aiHubProjectInfo object = {
+  id: aiHubProject.outputs.id
+  name: aiHubProject.outputs.name
+}
+
+output containerAppsEnvironmentInfo object = {
+  id: containerAppsEnvironment.outputs.id
+  name: containerAppsEnvironment.outputs.name
+  defaultDomain: containerAppsEnvironment.outputs.defaultDomain
+  staticIp: containerAppsEnvironment.outputs.staticIp
 }
