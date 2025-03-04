@@ -1,11 +1,27 @@
 {
     "recommendations": [
-        "ms-toolsai.jupyter",
-        "ms-python.python",
-        "tomoki1207.pdf",
-        "ms-vscode-remote.remote-containers",
+        "GitHub.remotehub",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "github.vscode-pull-request-github",
+        "GitHub.vscode-github-actions",
+        "ms-azuretools.azure-dev",
         "ms-azuretools.vscode-bicep",
+        "ms-azuretools.vscode-docker",
+        "ms-azuretools.vscode-azurecontainerapps",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-azurestorage",
+        "ms-azuretools.vscode-azure-github-copilot",
+        "ms-dotnettools.csdevkit",
         "ms-vscode.vscode-node-azure-pack",
-        "ms-vscode.powershell"
+        "ms-vscode.powershell",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "Orta.vscode-jest",
+        "christian-kohler.npm-intellisense",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig"
     ]
 }
