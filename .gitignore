@@ -160,6 +160,7 @@ cython_debug/
 #.idea/
 
 # App Specific
-!/tools/*
+!/tools/
 *Outputs.json
 *.env
+_archive/
