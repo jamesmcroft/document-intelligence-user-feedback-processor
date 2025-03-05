@@ -1,10 +1,18 @@
 from fastapi import FastAPI
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from app.common.app_settings import app_settings
+from app.common.observability.setup import setup_observability
 
+# Initialize Observability
+setup_observability()
+
+# Initialize API
 app = FastAPI(
-    title="Feedback Service",
-    description="Feedback Service API",
-    version="0.1.0"
+    title=app_settings.app_name,
+    description=app_settings.app_desc,
+    version="1.0.0"
 )
+FastAPIInstrumentor.instrument_app(app)
 
 # Include routes from each feature API module
 # app.include_router(feedback.router, prefix="/feedback", tags=["feedback"])
