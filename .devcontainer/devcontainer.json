@@ -9,9 +9,8 @@
     "ghcr.io/devcontainers/features/powershell:1": {},
     "ghcr.io/devcontainers/features/azure-cli:1": {},
     "ghcr.io/azure/azure-dev/azd:0": {},
-    "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "9.0",
-      "additionalVersions": "8.0"
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
     },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"
@@ -26,7 +25,7 @@
     "ghcr.io/devcontainers/features/powershell",
     "ghcr.io/devcontainers/features/azure-cli",
     "ghcr.io/azure/azure-dev/azd",
-    "ghcr.io/devcontainers/features/dotnet",
+    "ghcr.io/devcontainers/features/python",
     "ghcr.io/devcontainers/features/node",
     "ghcr.io/devcontainers/features/git-lfs",
     "ghcr.io/devcontainers/features/github-cli",
@@ -54,7 +53,9 @@
         "ms-azuretools.vscode-azureresourcegroups",
         "ms-azuretools.vscode-azurestorage",
         "ms-azuretools.vscode-azure-github-copilot",
-        "ms-dotnettools.csdevkit",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.autopep8",
         "ms-vscode.vscode-node-azure-pack",
         "ms-vscode.powershell",
         "ms-vscode-remote.vscode-remote-extensionpack",
