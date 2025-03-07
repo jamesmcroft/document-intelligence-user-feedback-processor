@@ -6,11 +6,8 @@ from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExport
 from opentelemetry.exporter.otlp.proto.grpc._log_exporter import OTLPLogExporter
 from opentelemetry.exporter.otlp.proto.grpc.metric_exporter import OTLPMetricExporter
 from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProcessor
 from opentelemetry.sdk._logs import LoggerProvider
-from opentelemetry.sdk._logs.export import ConsoleLogExporter, SimpleLogRecordProcessor
 from opentelemetry.sdk.metrics import MeterProvider
-from opentelemetry.sdk.metrics.export import ConsoleMetricExporter
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
 from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
@@ -29,21 +26,6 @@ def setup_observability():
     logger_provider = otel_logs.get_logger_provider()
 
     otel_metric_readers = []
-
-    # Configure console exporter
-    console_trace_exporter = ConsoleSpanExporter()
-    console_span_processor = SimpleSpanProcessor(console_trace_exporter)
-    trace_provider.add_span_processor(console_span_processor)
-
-    console_log_exporter = ConsoleLogExporter()
-    console_log_processor = SimpleLogRecordProcessor(console_log_exporter)
-    logger_provider.add_log_record_processor(console_log_processor)
-
-    console_metric_exporter = ConsoleMetricExporter()
-    otel_metric_readers.append(PeriodicExportingMetricReader(
-        exporter=console_metric_exporter,
-        export_interval_millis=app_settings.otel_exporter_export_interval
-    ))
 
     # Configure generic OTLP exporters
     if app_settings.otel_exporter_otlp_endpoint:
