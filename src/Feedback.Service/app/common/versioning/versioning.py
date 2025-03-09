@@ -4,7 +4,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.routing import APIRoute
 from typing import Optional, Callable, Any, Set
 
-DEFAULT_API_VERSION = "2025-01-01"
+DEFAULT_API_VERSION = "2025-04-01"
 
 def version(*versions: str) -> Callable:
     """
