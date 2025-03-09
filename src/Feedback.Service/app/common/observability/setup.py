@@ -5,11 +5,12 @@ from opentelemetry import metrics as otel_metrics
 from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
 from opentelemetry.exporter.otlp.proto.grpc._log_exporter import OTLPLogExporter
 from opentelemetry.exporter.otlp.proto.grpc.metric_exporter import OTLPMetricExporter
+
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk._logs import LoggerProvider
 from opentelemetry.sdk.metrics import MeterProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
-from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
+from opentelemetry.sdk._logs.export import BatchLogRecordProcessor, ConsoleLogExporter
 from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
 from opentelemetry.instrumentation.logging import LoggingInstrumentor
 from azure.monitor.opentelemetry.exporter import AzureMonitorTraceExporter, AzureMonitorLogExporter, AzureMonitorMetricExporter
@@ -26,6 +27,10 @@ def setup_observability():
     logger_provider = otel_logs.get_logger_provider()
 
     otel_metric_readers = []
+
+    console_log_exporter = ConsoleLogExporter()
+    console_log_processor = BatchLogRecordProcessor(console_log_exporter)
+    logger_provider.add_log_record_processor(console_log_processor)
 
     # Configure generic OTLP exporters
     if app_settings.otel_exporter_otlp_endpoint:
